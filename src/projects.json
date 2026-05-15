@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Tamam Customer",
+    "description": "On-demand services platform connecting users with local service providers for home maintenance, car wash, and more.",
+    "category": "Services",
+    "tags": ["Flutter", "Firebase", "Google Maps", "Stripe"],
+    "playStore": "https://play.google.com/store/apps/details?id=com.tamam.customer",
+    "appStore": "https://apps.apple.com/us/app/tamam-services-on-demand/id6740270481",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/93/68/48/936848fd-b93c-2cee-1097-c6e7e015987e/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg"
+  },
+  {
+    "title": "Tamam Vendor",
+    "description": "Business management tool for service providers to manage bookings, track revenue, and communicate with customers.",
+    "category": "Business",
+    "tags": ["Flutter", "Firebase", "Real-time", "Charts"],
+    "playStore": "https://play.google.com/store/apps/details?id=com.tamam.vendor",
+    "appStore": "https://apps.apple.com/us/app/tamam-vendor/id6740737001",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/35/29/61/3529615a-df63-a578-458c-1b98f8d87537/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg"
+  },
+  {
+    "title": "DocDoc Customer",
+    "description": "Dental care booking platform allowing patients to find dentists, book appointments, and manage medical history.",
+    "category": "Healthcare",
+    "tags": ["Flutter", "Laravel", "Medical", "Appointments"],
+    "playStore": "https://play.google.com/store/apps/details?id=com.docdoc.customer",
+    "appStore": "https://apps.apple.com/us/app/docdoc-dental-care/id6743958550",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0c/e4/e9/0ce4e9e1-4e57-2d3f-25fe-39e6e8f0b235/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg"
+  },
+  {
+    "title": "DocDoc Partner",
+    "description": "Management system for dental clinics to manage patient records, staff schedules, and clinic performance.",
+    "category": "Business",
+    "tags": ["Flutter", "Laravel", "ERP", "Healthcare"],
+    "playStore": "https://play.google.com/store/apps/details?id=com.docdoc.vendor",
+    "appStore": "https://apps.apple.com/us/app/docdoc-partner/id6744539826",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f3/ac/cf/f3accffe-5c7e-45aa-a9ac-9cb58b509a5b/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg"
+  },
+  {
+    "title": "Logi",
+    "description": "Efficient logistics and delivery management application with real-time tracking and optimized routing.",
+    "category": "Logistics",
+    "tags": ["Flutter", "Google Maps", "Tracking", "Optimized"],
+    "playStore": "https://play.google.com/store/apps/details?id=com.logicorp",
+    "appStore": "https://apps.apple.com/us/app/logi-deliver-with-a-tap/id6478827419",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/04/96/3b/04963b82-ed6e-1cae-5149-6e272b9e7a45/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg"
+  },
+  {
+    "title": "Blaxity",
+    "description": "A private dating and social community for verified couples and singles to connect and attend exclusive events.",
+    "category": "Social",
+    "tags": ["Flutter", "Socket.io", "Private", "Social"],
+    "playStore": "https://play.google.com/store/apps/details?id=com.appp.blaxity",
+    "appStore": "https://apps.apple.com/app/blaxity-dating-meet-couples/id1485603417",
+    "icon": "https://play-lh.googleusercontent.com/pvhTrgDwKyu5V81_YAmeBoGAKPqInRyDBUnYwyPeIaxyVwSffpXIDlHUW6VDtOJQJQ"
+  },
+  {
+    "title": "Hooray",
+    "description": "An interactive event and celebration management app for creating and managing high-energy social gatherings.",
+    "category": "Events",
+    "tags": ["Flutter", "Animations", "Events", "Firebase"],
+    "playStore": "https://play.google.com/store/apps/details?id=com.codergize.hooray",
+    "appStore": "#",
+    "icon": "https://play-lh.googleusercontent.com/8Ybg9GSDD2Gvibfy16MndTqqp7nt9irpBQpVkcOOJN997T3Z9D4LcOrW0te2GDpA7c0=w480-h960-rw"
+  },
+  {
+    "title": "Soft Station",
+    "description": "A next-generation fuel management and analytics platform designed for petrol stations and distributors.",
+    "category": "Industrial",
+    "tags": ["Flutter", "Analytics", "Industrial", "Real-time"],
+    "playStore": "https://play.google.com/store/apps/details?id=com.codergize.softstations",
+    "appStore": "https://apps.apple.com/pk/app/soft-station/id6749851602",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ee/cd/e1/eecde14a-5e49-3260-9fa2-5b4d14e6ba17/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg"
+  },
+  {
+    "title": "MEPC Pet Shop",
+    "description": "Middle East Pet Center (MEPC) is your complete pet care destination for supplies and services in one powerful app.",
+    "category": "E-Commerce",
+    "tags": ["Flutter", "Firebase", "Shopping", "Services"],
+    "playStore": "#",
+    "appStore": "https://apps.apple.com/us/app/mepc-pet-shop-care/id6760174751",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e9/1d/4a/e91d4a0a-af25-959d-2da0-ef4c6f931079/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg"
+  }
+]
