@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import { motion, AnimatePresence } from 'framer-motion'
 import useSWR from 'swr'
 import { 
@@ -149,16 +150,30 @@ export function App() {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormState({ name: '', email: '', subject: '', message: '' });
-    
-    // Reset success message after 3 seconds
-    setTimeout(() => setIsSuccess(false), 3000);
+
+    try {
+      await emailjs.send(
+        'service_naseem',        // ← Your EmailJS Service ID
+        'template_naseem',       // ← Your EmailJS Template ID
+        {
+          from_name:    formState.name,
+          from_email:   formState.email,
+          subject:      formState.subject,
+          message:      formState.message,
+          to_name:      'Naseem Khan',
+        },
+        'YOUR_EMAILJS_PUBLIC_KEY' // ← Your EmailJS Public Key
+      );
+
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      setFormState({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setIsSuccess(false), 4000);
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setIsSubmitting(false);
+      alert('Failed to send message. Please email me directly at naseem236991@gmail.com');
+    }
   };
 
   useEffect(() => {
@@ -365,7 +380,7 @@ export function App() {
 
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 4+ years crafting high-performance Flutter apps for Android & iOS. 
-                50+ apps shipped across Pakistan, UK, Lebanon, UAE & beyond — 
+                30+ apps shipped across Pakistan, UK, Lebanon, UAE & beyond — 
                 I turn complex ideas into elegant, scalable, production-ready mobile experiences.
               </p>
 
@@ -374,7 +389,7 @@ export function App() {
                   'Flutter & Dart Expert', 'Laravel & REST APIs',
                   'Firebase Integration', 'Clean Architecture (MVVM)',
                   'Android & iOS Deployment', 'UI/UX Focused',
-                  'State Management (BLoC)', 'Payment Integrations'
+                  'State Management (Getx)', 'Payment Integrations'
                 ].map(item => (
                   <div key={item} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-indigo-500" />
@@ -557,24 +572,36 @@ export function App() {
               </p>
               
               <div className="space-y-10">
-                <div className="flex items-center gap-8">
-                  <div className="w-20 h-20 rounded-3xl glass-card flex items-center justify-center text-indigo-500 text-3xl">
+                <a
+                  href="mailto:naseem236991@gmail.com"
+                  className="flex items-center gap-8 group"
+                >
+                  <div className="w-20 h-20 rounded-3xl glass-card flex items-center justify-center text-indigo-500 text-3xl group-hover:bg-indigo-500/10 transition-all">
                     <FiMail />
                   </div>
                   <div>
                     <p className="text-slate-500 text-sm font-bold uppercase tracking-widest mb-1">Email</p>
-                    <p className="text-2xl font-black text-slate-900 dark:text-white">naseem236991@gmail.com</p>
+                    <p className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-indigo-400 transition-colors underline-offset-4 group-hover:underline">
+                      naseem236991@gmail.com
+                    </p>
                   </div>
-                </div>
-                <div className="flex items-center gap-8">
-                  <div className="w-20 h-20 rounded-3xl glass-card flex items-center justify-center text-[#00FFA3] text-3xl">
+                </a>
+                <a
+                  href="https://wa.me/923346370552"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-8 group"
+                >
+                  <div className="w-20 h-20 rounded-3xl glass-card flex items-center justify-center text-[#00FFA3] text-3xl group-hover:bg-[#00FFA3]/10 transition-all">
                     <FiSmartphone />
                   </div>
                   <div>
                     <p className="text-slate-500 text-sm font-bold uppercase tracking-widest mb-1">WhatsApp</p>
-                    <p className="text-2xl font-black text-slate-900 dark:text-white">+92 334 6370552</p>
+                    <p className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-[#00FFA3] transition-colors underline-offset-4 group-hover:underline">
+                      +92 334 6370552
+                    </p>
                   </div>
-                </div>
+                </a>
               </div>
 
               <div className="mt-16 flex gap-6">
