@@ -15,16 +15,27 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
   
   body {
     @apply bg-slate-50 text-slate-900 dark:bg-[#020617] dark:text-slate-100 transition-colors duration-300;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    min-width: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -34,15 +45,22 @@
   }
   
   .glass-card {
-    @apply backdrop-blur-md bg-white/70 dark:bg-[#0B0F1A]/80 border border-slate-200 dark:border-white/5 shadow-xl transition-all;
+    @apply backdrop-blur-md bg-white/70 dark:bg-[#0B0F1A]/80 border border-slate-200 dark:border-white/5 shadow-xl transition-all duration-300;
   }
 
   .stat-badge {
-    @apply absolute p-4 rounded-2xl glass-card flex flex-col items-center justify-center min-w-[120px] shadow-2xl z-20;
+    @apply absolute p-3 rounded-2xl glass-card flex flex-col items-center justify-center shadow-2xl z-20;
+    min-width: clamp(90px, 20vw, 130px);
   }
 
   .project-card {
     @apply relative flex flex-col h-full rounded-[2.5rem] overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0B0F1A]/80 shadow-2xl;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.15);
   }
 
   .project-header {
@@ -54,15 +72,27 @@
   }
 
   .skill-card {
-    @apply flex flex-col items-center justify-center p-8 rounded-3xl glass-card hover:scale-105 hover:border-indigo-500/50 transition-all;
+    @apply flex flex-col items-center justify-center rounded-3xl glass-card transition-all duration-300;
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+
+  .skill-card:hover {
+    transform: translateY(-4px) scale(1.02);
   }
 
   .service-card {
-    @apply p-8 rounded-[2.5rem] glass-card border border-slate-200 dark:border-white/5 hover:translate-y-[-8px] transition-all;
+    @apply rounded-[2rem] glass-card border border-slate-200 dark:border-white/5 transition-all duration-300;
+    padding: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.12);
   }
 
   .exp-card {
-    @apply relative p-8 rounded-[2rem] bg-white dark:bg-[#0B0F1A]/60 border border-slate-200 dark:border-white/5 shadow-xl;
+    @apply relative rounded-[1.5rem] bg-white dark:bg-[#0B0F1A]/60 border border-slate-200 dark:border-white/5 shadow-xl;
+    padding: clamp(1.25rem, 4vw, 2rem);
   }
 
   .timeline-line {
@@ -78,11 +108,21 @@
   }
 
   .btn-store {
-    @apply flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all active:scale-95 border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5;
+    @apply flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 active:scale-95 border border-slate-200 dark:border-white/10;
+  }
+
+  .btn-store:hover {
+    transform: translateY(-1px);
   }
 
   .form-input {
-    @apply w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-indigo-500/50 transition-all dark:text-slate-100 text-slate-900 placeholder:text-slate-500;
+    @apply w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl outline-none transition-all duration-300 dark:text-slate-100 text-slate-900 placeholder:text-slate-500;
+    padding: clamp(0.75rem, 2.5vw, 1rem) clamp(1rem, 3vw, 1.5rem);
+    font-size: 16px;
+  }
+
+  .form-input:focus {
+    @apply border-indigo-500/50 ring-2 ring-indigo-500/10;
   }
 
   .bg-mesh {
@@ -119,28 +159,30 @@
   .reveal-card:hover::before {
     @apply opacity-100;
   }
-
-  .floating {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-  }
 }
 
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
 }
 
-/* Custom Scrollbar */
+/* Animation delay utilities */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Smooth section transitions */
+section {
+  will-change: transform;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -148,5 +190,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700 transition-colors;
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
 }
