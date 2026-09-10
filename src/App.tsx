@@ -795,7 +795,7 @@ export function App() {
                     </label>
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Full Name"
                       className="form-input"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
@@ -808,7 +808,7 @@ export function App() {
                     </label>
                     <input
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="email@example.com"
                       className="form-input"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
